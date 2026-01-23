@@ -56,3 +56,7 @@ my_grapth.add_edge('C', 'A')
 my_grapth.remove_edge('A', 'D')
 
 my_grapth.print_graph()
+
+
+
+#深度優先

@@ -1,20 +1,25 @@
 class MyQueue:
     def __init__(self):
-        self.stack1 = [2]
+        self.stack1 = []
         self.stack2 = []
 
-    def peek(self):
-        if len(self.stack1) == 0:
-            return self.stack1[-1]
+    def peek(self): 
+        return self.stack1[-1]
+    
+    def is_empty(self):
+        return len(self.stack1) == 0
         
     def enqueue (self, values):
-        self.stack2.append(self.stack1.pop(self.peek()))
+        while not self.is_empty() and self.peek() < values:
+            self.stack2.append(self.stack1.pop())
+        
+        self.stack1.append(values)
 
-        for i in self.stack1:
-            print(i)
-        return self.stack2
+        while self.stack2:
+            self.stack1.append(self.stack2.pop())
+        return self.stack1
 
-
-
-my = MyQueue()
-print(my.enqueue(3))
+q = MyQueue()
+print(q.enqueue(1))
+print(q.enqueue(2))
+print(q.enqueue(3))

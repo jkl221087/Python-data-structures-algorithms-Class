@@ -29,6 +29,14 @@ print(m)
 
 #memoziaiton dp 優化
 
+# m:{0 1 2 3 4}
+# n:{0 1 2 3}
+# m * n
+#不用loop已經記住的節點
+#O(2^n + m) time ->>>>>> O(m * n)time
+#O(n + m) space ->>>>>>>>O(n + m)space
+
+
 #memo{}
 
 #
